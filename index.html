@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/index.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="regForm" action="/action_page.php">
+        <div style="text-align: center;"><h1>Complete the following steps</h1></div>
+        <p style="font-weight: 100; font-size: smaller; ">All fields marked with * are required</p>
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">
+            <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            <br><br>Step 1: Purchase details:<br><br>
+            <div class="autocomplete" style="width:300px;">
+                <input id="productpurchased" oninput="this.className = ''" name="product"
+                    placeholder="Product purchased...">
+            </div>
+            <div class="autocomplete">
+                <input placeholder="Order number..." oninput="this.className = ''" name="orderNo"> <br>
+            </div>
+            <div class="autocomplete">
+                <input placeholder="Date purchased..." oninput="this.className = ''" name="dateofpurchase"> <br>
+            </div>
+            <div class="autocomplete">
+                <input placeholder="..." oninput="this.className = ''" name="dateofpurchase"> <br>
+            </div>
+            <div id="satisfaction" class="autocomplete">
+                <input id="verySat" type="radio" name="satisfied">
+                <label for="verySat">Very Satisfied</label><br>
+                <input id="somewhatSat" type="radio" name="satisfied">
+                <label for="somewhatSat">Somewhat Satisfied</label><br>
+                <input id="neither" type="radio" name="satisfied">
+                <label for="neither">Neither satisfied nor dissatified</label>
+                <input id="somewhatDis" type="radio" name="satisfied">
+                <label for="somewhatDis">Somewhat Dissatisfied</label>
+                <input id="veryDis" type="radio" name="satisfied">
+                <label for="veryDis">Very dissatisfied</label>
+            </div>
+
+        </div>
+        <div class="tab">
+            <br><br>Step 2: Contact Info:<br><br>
+            <div class="autocomplete"> <input placeholder="First name..." oninput="this.className = ''" name="fname">
+            </div><br>
+            <div class="autocomplete"> <input placeholder="Last name..." oninput="this.className = ''" name="lname">
+            </div><br>
+            <div class="autocomplete"> <input placeholder="Email..." oninput="this.className = ''" name="email"> </div>
+            <br>
+            <div class="autocomplete"> <input placeholder="Street code..." oninput="this.className = ''" name="street">
+            </div><br>
+        </div>
+        <div class="tab">
+            <p style="font-size: 20px; color: rgb(84, 82, 82); font-weight: 600;">Step 3</p><br>
+            <p class="a-label">Select your free item</p>
+            <select name="cars" id="cars">
+                <option value="volvo">Duplicate product</option>
+                <option value="saab">Volvo</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            <p class="a-label">Review/comments(Minimum 100 words)*</p>
+            <div class="autocomplete"> <textarea id="review" rows="6" cols="70">  </textarea> </div><br>
+            <div class="autocomplete form-btn"><br><button id="sbmtToAmazon">Add review to amazon</button></div>
+        </div>
+
+        <!-- <div class="tab">Step 4: Login Info:
+            <div class="autocomplete"> <input placeholder="Username..." oninput="this.className = ''" name="uname">
+            </div><br>
+            <div class="autocomplete"> <input placeholder="Password..." oninput="this.className = ''" name="pword"
+                    type="password"> </div><br>
+        </div> -->
+
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+</body>
+
+<script src="./js/index.js"></script>
+
+</html>
